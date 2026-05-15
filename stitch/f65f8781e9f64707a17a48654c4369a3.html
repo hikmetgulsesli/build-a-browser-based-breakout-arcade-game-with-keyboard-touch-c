@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon Breakout - Paused</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#424754",
+                        "inverse-primary": "#005ac2",
+                        "inverse-surface": "#e1e2ec",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-container": "#461f00",
+                        "surface-variant": "#32353c",
+                        "on-background": "#e1e2ec",
+                        "outline": "#8c909f",
+                        "surface-dim": "#10131a",
+                        "on-secondary": "#490080",
+                        "on-secondary-fixed": "#2c0051",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-container": "#df7412",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#502400",
+                        "primary": "#adc6ff",
+                        "tertiary": "#ffb786",
+                        "on-tertiary-fixed": "#311400",
+                        "on-primary": "#002e6a",
+                        "on-surface-variant": "#c2c6d6",
+                        "surface-container-highest": "#32353c",
+                        "on-primary-container": "#00285d",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "secondary-fixed": "#f0dbff",
+                        "surface-container-high": "#272a31",
+                        "surface-container-low": "#191b23",
+                        "primary-fixed": "#d8e2ff",
+                        "surface": "#10131a",
+                        "secondary": "#ddb7ff",
+                        "surface-tint": "#adc6ff",
+                        "secondary-container": "#6f00be",
+                        "background": "#10131a",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "primary-container": "#4d8eff",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-bright": "#363941",
+                        "on-surface": "#e1e2ec",
+                        "on-secondary-container": "#d6a9ff",
+                        "inverse-on-surface": "#2e3038",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1d2027",
+                        "surface-container-lowest": "#0b0e15",
+                        "tertiary-fixed-dim": "#ffb786"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "hud-label": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "button-text": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "hud-label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "button-text": ["14px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden selection:bg-primary-container/30 font-body-md">
+<!-- 
+      BACKGROUND LAYER: Simulated Game Board 
+      This layer sits behind the pause overlay and is subject to the backdrop blur.
+    -->
+<div class="absolute inset-0 flex flex-col">
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 w-full z-10 flex justify-between items-center px-container-margin h-16 md:h-20 bg-surface-dim dark:bg-surface-dim border-b border-outline-variant bg-opacity-80 backdrop-blur-xl">
+<!-- Leading Icon -->
+<button class="text-on-surface-variant font-medium hover:text-primary hover:drop-shadow-[0_0_10px_rgba(173,198,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<!-- Headline / Brand -->
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-primary drop-shadow-[0_0_8px_rgba(173,198,255,0.5)] truncate max-w-[50%] text-center">
+                NEON BREAKOUT
+            </h1>
+<!-- Trailing Icons -->
+<div class="flex gap-4 md:gap-6 items-center">
+<button class="text-on-surface-variant font-medium hover:text-primary hover:drop-shadow-[0_0_10px_rgba(173,198,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-[24px]">volume_up</span>
+</button>
+<button class="text-primary font-bold hover:drop-shadow-[0_0_10px_rgba(173,198,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="text-on-surface-variant font-medium hover:text-primary hover:drop-shadow-[0_0_10px_rgba(173,198,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Simulated Game Canvas -->
+<main class="flex-1 mt-[80px] mb-[80px] relative flex flex-col items-center pt-16 px-4 md:px-12">
+<!-- Grid of Bricks -->
+<div class="w-full max-w-4xl grid grid-cols-6 md:grid-cols-10 gap-1 md:gap-2">
+<!-- Row 1 -->
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 invisible"></div> <!-- Destroyed -->
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 invisible"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-error border border-error-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<!-- Row 2 -->
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 invisible"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block invisible"></div>
+<div class="h-6 md:h-8 bg-tertiary border border-tertiary-container shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<!-- Row 3 -->
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 invisible"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+<div class="h-6 md:h-8 bg-primary-container border border-primary shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] rounded-sm opacity-80 hidden md:block"></div>
+</div>
+<!-- Simulated Ball -->
+<div class="absolute bottom-[30%] left-[45%] w-4 h-4 bg-tertiary rounded-full shadow-[0_0_15px_rgba(255,183,134,0.9)]"></div>
+<!-- Simulated Paddle -->
+<div class="absolute bottom-12 w-32 h-4 bg-primary-container rounded-full shadow-[0_0_10px_rgba(77,142,255,0.6)] border border-primary/50"></div>
+</main>
+<!-- BottomNavBar / HUD (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-10 flex justify-around items-center h-20 px-4 pb-safe bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant bg-opacity-90 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.5)] rounded-t-xl">
+<!-- Item 1: SCORE -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/30 transition-colors p-2 rounded-lg cursor-default">
+<span class="material-symbols-outlined text-[20px] mb-1">leaderboard</span>
+<span class="font-hud-label text-hud-label uppercase tracking-widest text-[10px] md:text-hud-label">SCORE: 2500</span>
+</div>
+<!-- Item 2: LIVES -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/30 transition-colors p-2 rounded-lg cursor-default">
+<span class="material-symbols-outlined text-[20px] mb-1 text-error/80">favorite</span>
+<span class="font-hud-label text-hud-label uppercase tracking-widest text-[10px] md:text-hud-label">LIVES: 3</span>
+</div>
+<!-- Item 3: LEVEL -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/30 transition-colors p-2 rounded-lg cursor-default">
+<span class="material-symbols-outlined text-[20px] mb-1 text-primary/80">layers</span>
+<span class="font-hud-label text-hud-label uppercase tracking-widest text-[10px] md:text-hud-label">LEVEL: 04</span>
+</div>
+<!-- Item 4: INPUT -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/30 transition-colors p-2 rounded-lg hidden md:flex cursor-default">
+<span class="material-symbols-outlined text-[20px] mb-1">keyboard</span>
+<span class="font-hud-label text-hud-label uppercase tracking-widest text-[10px] md:text-hud-label">INPUT: KEYS</span>
+</div>
+</nav>
+</div>
+<!-- 
+      FOREGROUND LAYER: Pause Overlay 
+      This is the active UI intercepting user input.
+    -->
+<div class="fixed inset-0 z-[100] bg-background/70 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-300">
+<!-- Ambient Background Glow for Modal -->
+<div class="absolute w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary-container/20 blur-[100px] rounded-full pointer-events-none"></div>
+<!-- Central Modal Panel -->
+<div class="relative w-full max-w-sm bg-surface-container-high border border-outline-variant/60 shadow-[0_10px_40px_rgba(0,0,0,0.8)] rounded-2xl overflow-hidden flex flex-col">
+<!-- Top Edge Accent Line -->
+<div class="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-80"></div>
+<div class="p-8 flex flex-col items-center">
+<!-- Decorative Icon Header -->
+<div class="w-16 h-16 rounded-full bg-surface border border-outline-variant/50 shadow-[0_0_20px_rgba(173,198,255,0.15)] flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">pause</span>
+</div>
+<!-- Modal Title -->
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter drop-shadow-[0_0_12px_rgba(173,198,255,0.5)] mb-10 text-center">
+                    GAME PAUSED
+                </h2>
+<!-- Action Buttons Container -->
+<div class="w-full flex flex-col gap-4">
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-button-text text-[16px] font-bold rounded-xl flex items-center justify-center gap-3 shadow-[0_0_15px_rgba(77,142,255,0.2)] hover:shadow-[0_0_20px_rgba(77,142,255,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        Resume
+                    </button>
+<!-- Secondary Action 1 -->
+<button class="w-full h-14 bg-surface-dim text-on-surface border border-outline-variant font-button-text text-button-text rounded-xl flex items-center justify-center gap-3 hover:bg-surface-variant/50 hover:border-primary-container hover:text-primary-container hover:shadow-[0_0_10px_rgba(173,198,255,0.1)] active:scale-[0.98] transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                        Restart Level
+                    </button>
+<!-- Secondary Action 2 (Destructive Intent) -->
+<button class="w-full h-14 bg-surface-dim text-on-surface border border-outline-variant font-button-text text-button-text rounded-xl flex items-center justify-center gap-3 hover:bg-error-container/10 hover:border-error/50 hover:text-error hover:shadow-[0_0_10px_rgba(255,180,171,0.1)] active:scale-[0.98] transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                        Quit to Menu
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

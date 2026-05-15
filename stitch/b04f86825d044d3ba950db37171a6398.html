@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon Breakout - Main Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#424754",
+                      "inverse-primary": "#005ac2",
+                      "inverse-surface": "#e1e2ec",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-tertiary-container": "#461f00",
+                      "surface-variant": "#32353c",
+                      "on-background": "#e1e2ec",
+                      "outline": "#8c909f",
+                      "surface-dim": "#10131a",
+                      "on-secondary": "#490080",
+                      "on-secondary-fixed": "#2c0051",
+                      "error-container": "#93000a",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-primary-fixed": "#001a42",
+                      "tertiary-container": "#df7412",
+                      "tertiary-fixed": "#ffdcc6",
+                      "on-tertiary": "#502400",
+                      "primary": "#adc6ff",
+                      "tertiary": "#ffb786",
+                      "on-tertiary-fixed": "#311400",
+                      "on-primary": "#002e6a",
+                      "on-surface-variant": "#c2c6d6",
+                      "surface-container-highest": "#32353c",
+                      "on-primary-container": "#00285d",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "secondary-fixed": "#f0dbff",
+                      "surface-container-high": "#272a31",
+                      "surface-container-low": "#191b23",
+                      "primary-fixed": "#d8e2ff",
+                      "surface": "#10131a",
+                      "secondary": "#ddb7ff",
+                      "surface-tint": "#adc6ff",
+                      "secondary-container": "#6f00be",
+                      "background": "#10131a",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "primary-container": "#4d8eff",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "surface-bright": "#363941",
+                      "on-surface": "#e1e2ec",
+                      "on-secondary-container": "#d6a9ff",
+                      "inverse-on-surface": "#2e3038",
+                      "on-error": "#690005",
+                      "error": "#ffb4ab",
+                      "surface-container": "#1d2027",
+                      "surface-container-lowest": "#0b0e15",
+                      "tertiary-fixed-dim": "#ffb786"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "40px",
+                      "container-margin": "24px",
+                      "xs": "4px",
+                      "gutter": "16px",
+                      "sm": "8px",
+                      "base": "4px",
+                      "lg": "24px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "hud-label": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "button-text": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "hud-label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "button-text": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Neon Glow Utilities */
+        .neon-glow-primary {
+            box-shadow: 0 0 10px rgba(173, 198, 255, 0.4);
+        }
+        .neon-glow-text-primary {
+            text-shadow: 0 0 10px rgba(173, 198, 255, 0.4);
+        }
+        
+        /* Pattern Background Overlay */
+        .bg-pattern-overlay {
+            background-image: radial-gradient(circle at 50% 50%, rgba(173, 198, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-hidden relative">
+<!-- Background Decoration -->
+<div class="absolute inset-0 bg-pattern-overlay z-0 pointer-events-none opacity-50"></div>
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<!-- Floating Bricks Simulation -->
+<div class="absolute top-[20%] left-[15%] w-24 h-8 border border-outline-variant rounded-sm opacity-20 transform -rotate-12"></div>
+<div class="absolute top-[60%] right-[20%] w-32 h-8 border border-outline-variant rounded-sm opacity-10 transform rotate-6"></div>
+<div class="absolute bottom-[15%] left-[30%] w-20 h-8 border border-outline-variant rounded-sm opacity-30 transform rotate-45"></div>
+<!-- Ball Silhouette -->
+<div class="absolute top-[40%] right-[35%] w-6 h-6 rounded-full bg-primary/10 shadow-[0_0_20px_rgba(173,198,255,0.2)]"></div>
+</div>
+<!-- Main Navigation (TopAppBar - Reinterpreted for a Game Menu context, typically hidden on pure Main Menu, but keeping as per Source of Truth if considered a top-level hub) -->
+<!-- Note: Suppressing TopAppBar and BottomNavBar as this is a linear/transactional landing screen (Main Menu) acting as the entry point, prioritizing the canvas as per rules. -->
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center relative z-10 px-container-margin py-xl w-full max-w-4xl mx-auto">
+<!-- Hero Section -->
+<div class="text-center mb-xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter drop-shadow-[0_0_12px_rgba(173,198,255,0.6)] mb-sm">NEON BREAKOUT</h1>
+<p class="font-hud-label text-hud-label text-tertiary uppercase tracking-widest">Arcade Edition v2.0</p>
+</div>
+<!-- Menu Navigation Structure -->
+<div class="w-full max-w-sm flex flex-col gap-gutter">
+<!-- Primary Action -->
+<button class="group w-full relative flex items-center justify-center px-lg py-md bg-primary text-on-primary rounded-lg font-button-text text-button-text hover:bg-primary-fixed transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_15px_rgba(173,198,255,0.3)] hover:shadow-[0_0_25px_rgba(173,198,255,0.6)]">
+<span class="material-symbols-outlined mr-sm" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                START GAME
+            </button>
+<!-- Secondary Actions -->
+<button class="group w-full flex items-center justify-center px-lg py-md bg-surface border border-outline-variant text-on-surface rounded-lg font-button-text text-button-text hover:border-primary hover:text-primary transition-all hover:bg-surface-variant/30 active:scale-95">
+<span class="material-symbols-outlined mr-sm text-outline group-hover:text-primary transition-colors" data-icon="sports_esports">sports_esports</span>
+                CONTROLS &amp; RULES
+            </button>
+<button class="group w-full flex items-center justify-center px-lg py-md bg-surface border border-outline-variant text-on-surface rounded-lg font-button-text text-button-text hover:border-primary hover:text-primary transition-all hover:bg-surface-variant/30 active:scale-95">
+<span class="material-symbols-outlined mr-sm text-outline group-hover:text-primary transition-colors" data-icon="leaderboard">leaderboard</span>
+                HIGH SCORES
+            </button>
+<button class="group w-full flex items-center justify-center px-lg py-md bg-surface border border-outline-variant text-on-surface rounded-lg font-button-text text-button-text hover:border-primary hover:text-primary transition-all hover:bg-surface-variant/30 active:scale-95">
+<span class="material-symbols-outlined mr-sm text-outline group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+                SETTINGS
+            </button>
+</div>
+<!-- Decorative Footer HUD Elements -->
+<div class="absolute bottom-lg w-full flex justify-between px-container-margin max-w-4xl mx-auto pointer-events-none opacity-50">
+<div class="flex items-center gap-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-hud-label text-hud-label text-on-surface-variant uppercase">System Online</span>
+</div>
+<div class="font-hud-label text-hud-label text-on-surface-variant uppercase">
+                Credits: 99
+            </div>
+</div>
+</main>
+</body></html>

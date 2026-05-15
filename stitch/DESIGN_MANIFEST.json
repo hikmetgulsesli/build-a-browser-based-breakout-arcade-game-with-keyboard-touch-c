@@ -1,0 +1,42 @@
+[
+  {
+    "screenId": "85b26c05302f44bfbd1984bc049f8fb3",
+    "title": "Controls Help",
+    "htmlFile": "85b26c05302f44bfbd1984bc049f8fb3.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2I1OTAwZGE5ZDQzZDRiMGI4NGM0NWE3YmQ5OWQ0Y2E4EgsSBxCqtuymzhMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDgzMjE5NDE5OTgxMzQyOTA3MQ&filename=&opi=96797242",
+    "localHtml": "/home/setrox/projects/build-a-browser-based-breakout-arcade-game-with-keyboard-touch-c/stitch/85b26c05302f44bfbd1984bc049f8fb3.html"
+  },
+  {
+    "screenId": "204dd3a575b44818b58098e1db5c4c5c",
+    "title": "Game Board",
+    "htmlFile": "204dd3a575b44818b58098e1db5c4c5c.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2FjNjNmZmY1MzAwYzQ2YmE5ZTRiZjg0NTc0NDA0NWZiEgsSBxCqtuymzhMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDgzMjE5NDE5OTgxMzQyOTA3MQ&filename=&opi=96797242",
+    "localHtml": "/home/setrox/projects/build-a-browser-based-breakout-arcade-game-with-keyboard-touch-c/stitch/204dd3a575b44818b58098e1db5c4c5c.html"
+  },
+  {
+    "screenId": "88c618599b6348e68bd2ba107caea092",
+    "title": "Game Over",
+    "htmlFile": "88c618599b6348e68bd2ba107caea092.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzJjMzUwYjFmN2Y0MDQ2MmE5NTJmYmJjMTQyMDVlZDU0EgsSBxCqtuymzhMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDgzMjE5NDE5OTgxMzQyOTA3MQ&filename=&opi=96797242",
+    "localHtml": "/home/setrox/projects/build-a-browser-based-breakout-arcade-game-with-keyboard-touch-c/stitch/88c618599b6348e68bd2ba107caea092.html"
+  },
+  {
+    "screenId": "f65f8781e9f64707a17a48654c4369a3",
+    "title": "Pause Overlay",
+    "htmlFile": "f65f8781e9f64707a17a48654c4369a3.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzcwNGJlMjdkOTEyMTQ4YTk4YjdjNjBjYWVlYTQzM2I2EgsSBxCqtuymzhMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDgzMjE5NDE5OTgxMzQyOTA3MQ&filename=&opi=96797242",
+    "localHtml": "/home/setrox/projects/build-a-browser-based-breakout-arcade-game-with-keyboard-touch-c/stitch/f65f8781e9f64707a17a48654c4369a3.html"
+  },
+  {
+    "screenId": "b04f86825d044d3ba950db37171a6398",
+    "title": "Main Menu",
+    "htmlFile": "b04f86825d044d3ba950db37171a6398.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY0YmEzOGZiNzdiNTRjMDNhYWRjYzZjYjhhOWVjNDdiEgsSBxCqtuymzhMYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDgzMjE5NDE5OTgxMzQyOTA3MQ&filename=&opi=96797242",
+    "localHtml": "/home/setrox/projects/build-a-browser-based-breakout-arcade-game-with-keyboard-touch-c/stitch/b04f86825d044d3ba950db37171a6398.html"
+  }
+]
