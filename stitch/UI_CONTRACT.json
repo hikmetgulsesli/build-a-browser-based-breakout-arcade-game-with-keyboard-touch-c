@@ -1,0 +1,297 @@
+[
+  {
+    "screenId": "85b26c05302f44bfbd1984bc049f8fb3",
+    "screenTitle": "Controls Help",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Menu",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "Volume",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Pause",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 184
+      },
+      {
+        "type": "button",
+        "label": "Back to Menu",
+        "line": 193
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Menu",
+        "line": 171
+      },
+      {
+        "type": "button",
+        "label": "Volume",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Pause",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 184
+      },
+      {
+        "type": "button",
+        "label": "Back to Menu",
+        "line": 193
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 5,
+    "requiresRouter": false,
+    "requiresDragDrop": true
+  },
+  {
+    "screenId": "204dd3a575b44818b58098e1db5c4c5c",
+    "screenTitle": "Game Board",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "volume_up",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 142
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "volume_up",
+        "line": 136
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 142
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 4,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "88c618599b6348e68bd2ba107caea092",
+    "screenTitle": "Game Over",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "PLAY AGAIN",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "MAIN MENU",
+        "line": 197
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "PLAY AGAIN",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "MAIN MENU",
+        "line": 197
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "f65f8781e9f64707a17a48654c4369a3",
+    "screenTitle": "Pause Overlay",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 117
+      },
+      {
+        "type": "button",
+        "label": "volume_up",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 132
+      },
+      {
+        "type": "button",
+        "label": "Resume",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Restart Level",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "Quit to Menu",
+        "line": 237
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 117
+      },
+      {
+        "type": "button",
+        "label": "volume_up",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 132
+      },
+      {
+        "type": "button",
+        "label": "Resume",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Restart Level",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "Quit to Menu",
+        "line": 237
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 7,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "b04f86825d044d3ba950db37171a6398",
+    "screenTitle": "Main Menu",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 207
+      },
+      {
+        "type": "button",
+        "label": "CONTROLS &amp; RULES",
+        "line": 212
+      },
+      {
+        "type": "button",
+        "label": "HIGH SCORES",
+        "line": 216
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 220
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 207
+      },
+      {
+        "type": "button",
+        "label": "CONTROLS &amp; RULES",
+        "line": 212
+      },
+      {
+        "type": "button",
+        "label": "HIGH SCORES",
+        "line": 216
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 220
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 4,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
