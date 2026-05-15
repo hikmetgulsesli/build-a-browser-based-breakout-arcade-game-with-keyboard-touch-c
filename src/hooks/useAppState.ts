@@ -39,7 +39,13 @@ function createBall(): Ball {
 
 function createBricks(level: number): Brick[] {
   const bricks: Brick[] = [];
-  const colors = ['#ff5252', '#ff9800', '#ffeb3b', '#4caf50', '#2196f3'];
+  const colors = [
+    'var(--color-error)',
+    'var(--color-tertiary)',
+    'var(--color-primary)',
+    'var(--color-secondary)',
+    'var(--color-primary-container)',
+  ];
   for (let r = 0; r < BRICK_ROWS; r++) {
     for (let c = 0; c < BRICK_COLS; c++) {
       bricks.push({

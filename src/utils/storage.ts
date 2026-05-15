@@ -16,6 +16,8 @@ export function loadHighScores(): HighScoreEntry[] {
         typeof e.date === 'string',
     );
   } catch {
+    console.error('Breakout: localStorage high scores corrupted; clearing persisted data.');
+    clearHighScores();
     return [];
   }
 }
