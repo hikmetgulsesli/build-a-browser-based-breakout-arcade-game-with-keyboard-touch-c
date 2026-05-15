@@ -103,25 +103,73 @@ export default function App() {
         );
       case 'highscores':
         return (
-          <MainMenu
-            actions={{
-              'start-game-1': actions.startGame,
-              'controls-and-rules-2': actions.showControls,
-              'high-scores-3': actions.showHighScores,
-              'settings-4': actions.showSettings,
-            }}
-          />
+          <div
+            className="min-h-screen flex flex-col items-center justify-center p-6"
+            style={{ background: 'var(--color-background)', color: 'var(--color-on-surface)' }}
+          >
+            <h1
+              className="text-3xl font-bold mb-8"
+              style={{ fontFamily: 'var(--font-display-lg)' }}
+            >
+              HIGH SCORES
+            </h1>
+            {state.highScores.length === 0 ? (
+              <p style={{ color: 'var(--color-on-surface-variant)' }}>
+                No scores yet. Play a game to set a record!
+              </p>
+            ) : (
+              <div className="w-full max-w-md space-y-2">
+                {state.highScores.map((entry, i) => (
+                  <div
+                    key={i}
+                    className="flex justify-between items-center px-4 py-3 rounded"
+                    style={{ background: 'var(--color-surface-container)' }}
+                  >
+                    <span className="font-medium">
+                      {i + 1}. {entry.name}
+                    </span>
+                    <span
+                      className="font-bold"
+                      style={{ fontFamily: 'var(--font-hud-label)' }}
+                    >
+                      {entry.score}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+            <button
+              onClick={actions.showMenu}
+              className="mt-8 px-6 py-3 rounded font-semibold"
+              style={{ background: 'var(--color-primary)', color: 'var(--color-on-primary)' }}
+            >
+              BACK TO MENU
+            </button>
+          </div>
         );
       case 'settings':
         return (
-          <MainMenu
-            actions={{
-              'start-game-1': actions.startGame,
-              'controls-and-rules-2': actions.showControls,
-              'high-scores-3': actions.showHighScores,
-              'settings-4': actions.showSettings,
-            }}
-          />
+          <div
+            className="min-h-screen flex flex-col items-center justify-center p-6"
+            style={{ background: 'var(--color-background)', color: 'var(--color-on-surface)' }}
+          >
+            <h1
+              className="text-3xl font-bold mb-8"
+              style={{ fontFamily: 'var(--font-display-lg)' }}
+            >
+              SETTINGS
+            </h1>
+            <p style={{ color: 'var(--color-on-surface-variant)' }}>
+              Game settings will be available here.
+            </p>
+            <button
+              onClick={actions.showMenu}
+              className="mt-8 px-6 py-3 rounded font-semibold"
+              style={{ background: 'var(--color-primary)', color: 'var(--color-on-primary)' }}
+            >
+              BACK TO MENU
+            </button>
+          </div>
         );
       default:
         return null;
